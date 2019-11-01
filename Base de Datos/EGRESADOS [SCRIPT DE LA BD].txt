@@ -1,0 +1,38 @@
+
+
+
+
+------------------------------------------------ PROYECTO Egresados BD -----------------------------------------
+
+--- Materia: GESTION DE PROYECTOS DE SOFTWARE
+
+--- Autores: Mario Algarate 
+------------ Alonso Martinez
+------------ Octavio Montelongo
+------------ Daniel Arratia
+------------ Luis Garcia
+
+-- Fecha de Creacion: 25/10/2019
+-- Fecha de ultima Modificacion: 28/10/2019
+
+
+
+
+CREATE TABLE Alumno
+(
+ NoCtrl VARCHAR(8), NombreAlumno VARCHAR(70), EdadAlumno SMALLINT, SexoAlumno CHAR (2), CarreraAlumno VARCHAR(80), 
+ Semestre SMALLINT, EmailAlumno VARCHAR(70), PRIMARY KEY (NoCtrl) 
+)
+
+CREATE TABLE Profesor
+(
+  NoTarjeta VARCHAR(15), NombreProfesor VARCHAR(70), EdadProfesor SMALLINT, SexoProfesor CHAR (2), Profesion VARCHAR(80),
+	EmailProfesor  VARCHAR(70), CarreraImparte VARCHAR(95), PRIMARY KEY (NoTarjeta)
+)
+
+
+CREATE TABLE Egresado
+(
+ NoCtrlEgresado VARCHAR(8), NombreEgresado VARCHAR(70), EdadEgresado SMALLINT, SexoEgresado CHAR (2), Profesion VARCHAR(80), 
+ EmailEgresado VARCHAR(70), NombreEmpresa VARCHAR(90), PuestoEmpresa VARCHAR(90), PRIMARY KEY (NoCtrlEgresado) 
+)
