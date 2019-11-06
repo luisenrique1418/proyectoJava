@@ -6,25 +6,74 @@
 </head>
 <body>
 
+	<div class="radiosB">
+			<table class="egt">
+
+					<tr>
+				  
+					  <td> Alumno</td> <td><input  type="radio" name="tipo" id="alumno" value="Alumno"></td>
+				  
+					  <td> Egresado</td> <td><input  type="radio" name="tipo" id="egresado"></td>
+				  
+					  <td>Profesor</td> <td> <input  type="radio" name="tipo" id="profesor"></td>
+				  
+					</tr>
+			</table>
+	</div>
+	<div id="alumnoForm">
 	<form action="#" method="post">
 		<p>
-			<label for="username">Username</label>
+			<label for="username">Numero De Control</label>
 			<input id="username" name="username" type="text">
 		</p>
 		<p>
-			<label for="password">Password</label>
+			<label for="password">Contraseña</label>
 			<input id="password" name="password" type="password">
-			<span>Enter a password longer than 8 characters</span>
-		</p>
+			<span>La contraseña debe de ser mayor a 8 caracteres</span>
+		</p>	
 		<p>
-			<label for="confirm">Confirm Password</label>
-			<input id="confirm" name="confirm" type="password">
-			<span>Please confirm your password</span>
+			<input type="submit" value="SUBMIT" id="submitAl">
 		</p>
-		<p>
-			<input type="submit" value="SUBMIT" id="submit">
-		</p>
+	
 	</form>
+</div>
+
+<div id="egresadoForm">
+		<form action="#" method="post">
+			<p>
+				<label for="username">NoCtrl</label>
+				<input id="username" name="username" type="text">
+			</p>
+			<p>
+				<label for="password">Contraseña</label>
+				<input id="password" name="password" type="password">
+				<span>La contraseña debe de ser mayor a 8 caracteres</span>
+			</p>
+			<p>
+				<input type="submit" value="SUBMIT" id="submit">
+			</p>
+		
+		</form>
+	</div>
+
+	<div id="profesorForm">
+			<form action="#" method="post">
+				<p>
+					<label for="username">Numero de Tarjeta</label>
+					<input id="username" name="username" type="text">
+				</p>
+				<p>
+					<label for="password">Contraseña</label>
+					<input id="password" name="password" type="password">
+					<span>La contraseña debe de ser mayor a 8 caracteres</span>
+				</p>
+				<p>
+					<input type="submit" value="SUBMIT" id="submit">
+				</p>
+			
+			</form>
+		</div>
+
     <script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
 </body>

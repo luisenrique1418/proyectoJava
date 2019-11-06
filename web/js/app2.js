@@ -20,7 +20,38 @@ function compara() {
 $('#password').keyup(longitud).keyup(compara);
 $('#confirm').keyup(compara).keyup(longitud);
 
+$('#alumno').click(function() {
+    $('#alumnoForm').is(':hidden')
+    $('#alumnoForm').show();
 
+    $('#egresadoForm').is(':visible')
+    $('#egresadoForm').hide();
+
+    $('#profesorForm').is(':visible')
+    $('#profesorForm').hide();
+});
+
+$('#egresado').click(function() {
+    $('#alumnoForm').is(':visible')
+    $('#alumnoForm').hide();
+
+    $('#egresadoForm').is(':hidden')
+    $('#egresadoForm').show();
+
+    $('#profesorForm').is(':visible')
+    $('#profesorForm').hide();
+});
+
+$('#profesor').click(function() {
+    $('#alumnoForm').is(':visible')
+    $('#alumnoForm').hide();
+
+    $('#egresadoForm').is(':visible')
+    $('#egresadoForm').hide();
+
+    $('#profesorForm').is(':hidden')
+    $('#profesorForm').show();
+});
 
 
 

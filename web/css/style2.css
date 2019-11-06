@@ -80,5 +80,28 @@ input[type="submit"] {
   outline: none;
   padding: .8em 0;
   text-shadow: 0 1px #68B25B;
+}
 
+.radiosB{
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.egt td{
+  padding-right: 1em;
+  font-size: 1em;
+}
+
+.egt input{
+  display: inline;
+  width: 1em;
+  height: 1em;
+}
+.radios{
+  display: inline;
+  font-size: .9em; 
+  color: #ffffff;
+  background-color: #334 ;
 }
