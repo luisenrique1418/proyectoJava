@@ -29,12 +29,6 @@
 :*  01/11/2019    Daniel Arratia          Agregacion de parametros a las tablas "alumno",  
 :*                                        "profesor" y "usuarioinvitado" de la BD.
 :*------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
 ---------------------------------------
 -- Creamos la Base de Datos contactoitl
 ---------------------------------------
@@ -64,6 +58,7 @@ CREATE TABLE `alumno`  (
   `Semestre` smallint(6) NULL DEFAULT NULL,
   `Email` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Habilitado` boolean NULL DEFAULT NULL,
   PRIMARY KEY (`NoCtrl`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
@@ -85,6 +80,7 @@ CREATE TABLE `egresado`  (
   `NombreEmpresa` varchar(90) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `PuestoEmpresa` varchar(90) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Habilitado` boolean NULL DEFAULT NULL,
   PRIMARY KEY (`NoCtrlEgresado`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
@@ -105,6 +101,7 @@ CREATE TABLE `profesor`  (
   `EmailProfesor` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `CarreraImparte` varchar(95) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Habilitado` boolean NULL DEFAULT NULL,
   PRIMARY KEY (`NoTarjeta`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 

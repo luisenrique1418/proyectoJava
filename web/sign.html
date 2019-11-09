@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Sign Up Form</title>
-	<link rel="stylesheet" href="./css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 
@@ -16,28 +16,28 @@
 			</table>
 	</div>
 	<div id="alumnoForm">
-	<form action="../php/veriPage.php" target="_parent" method="post">
+	<form action="./PHP/veriPage.php" target="_parent" method="post">
 		<p>
 			<label for="username">Numero De Control</label>
-			<input id="noCtrl" name="NoCtrl" type="text">
+			<input id="noCtrl" name="NoCtrl" type="text" >
         </p>
         <p>
                 <label for="username">Nombre</label>
-                <input id="nombre" name="nombre" type="text">
+                <input id="nombre" name="nombre" type="text" >
         </p>
 		<p>
 			<label for="password">Contraseña</label>
-			<input id="password" name="password" type="password">
+			<input id="password" name="password" type="password" >
 			<span>La contraseña debe de ser mayor a 8 caracteres</span>
         </p>
         <p>
                 <label for="confirm">Confirma la contrasña</label>
-                <input id="confirm" name="confirm" type="password">
+                <input id="confirm" name="confirm" type="password" >
                 <span>Las contraseñas no coinciden</span>
             </p>
             <p>
                     <label for="username">Edad</label>
-                    <input id="edad" name="edad" type="text">
+                    <input id="edad" name="edad" type="text" >
             </p>
             <p>
                     <label for="username">Sexo</label>
@@ -56,14 +56,16 @@
                     <input id="email" name="email" type="text">
             </p>
 		<p>
-			<input type="submit" value="SUBMIT" id="submitAl">
+            <input type="submit" value="SUBMIT" id="submitAlSi">
+            <input type="hidden" name="BUTTON" value="Alumno">
+            <input type="hidden" name="type" value="sign">
 		</p>
 	
 	</form>
 </div>
 
 <div id="egresadoForm">
-        <form action="../php/veriPage.php" method="post">
+        <form action="./PHP/veriPage.php" target="_parent" method="post">
             <p>
                 <label for="username">Numero De Control</label>
                 <input id="noCtrl" name="NoCtrl" type="text">
@@ -107,7 +109,8 @@
                         <input id="emailEgre" name="email" type="text">
                 </p>
             <p>
-                <input type="submit" value="SUBMIT" id="submitEgr">
+                    <input type="hidden" name="BUTTON" value="Egresado">
+                    <input type="hidden" name="type" value="sign">
             </p>
         
         </form>
@@ -115,7 +118,8 @@
 
 
     <div id="profesorForm">
-            <form action="../php/veriPage.php" method="post">
+            <form action="./PHP/veriPage.php" target="_parent" method="post">
+                
                 <p>
                     <label for="username">Numero De Tarjeta</label>
                     <input id="noCtrl" name="NoCtrl" type="text">
@@ -155,13 +159,15 @@
                             <input id="email" name="email" type="text">
                     </p>
                 <p>
-                    <input type="submit" value="SUBMIT" id="submitProf">
+                    <input type="submit" value="SUBMIT" id="submitProfSi">
+                    <input type="hidden" name="BUTTON" value="Profesor">
+                    <input type="hidden" name="type" value="sign">
                 </p>
             
             </form>
         </div>
 
-    <script src="../js/jquery-3.3.1.min.js"></script>
-	<script src="../js/app2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Sign Up Form</title>
-	<link rel="stylesheet" href="../css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
 			</table>
 	</div>
 	<div id="alumnoForm">
-	<form action="#" method="post">
+	<form action="./PHP/mainPage.php" target="_parent" method="post">
 		<p>
 			<label for="username">Numero De Control</label>
 			<input id="username" name="username" type="text">
@@ -33,13 +33,15 @@
 		</p>	
 		<p>
 			<input type="submit" value="SUBMIT" id="submitAl">
+			<input type="hidden" name="BUTTON" value="Alumno">
+            <input type="hidden" name="type" value="login">
 		</p>
 	
 	</form>
 </div>
 
 <div id="egresadoForm">
-		<form action="#" method="post">
+		<form action="./PHP/mainPage.php" target="_parent" method="post">
 			<p>
 				<label for="username">NoCtrl</label>
 				<input id="username" name="username" type="text">
@@ -51,13 +53,15 @@
 			</p>
 			<p>
 				<input type="submit" value="SUBMIT" id="submit">
+				<input type="hidden" name="BUTTON" value="Egresado">
+                    <input type="hidden" name="type" value="login">
 			</p>
 		
 		</form>
 	</div>
 
 	<div id="profesorForm">
-			<form action="#" method="post">
+			<form action="./PHP/mainPage.php" target="_parent" method="post">
 				<p>
 					<label for="username">Numero de Tarjeta</label>
 					<input id="username" name="username" type="text">
@@ -69,12 +73,14 @@
 				</p>
 				<p>
 					<input type="submit" value="SUBMIT" id="submit">
+					<input type="hidden" name="BUTTON" value="Profesor">
+                    <input type="hidden" name="type" value="login">
 				</p>
 			
 			</form>
 		</div>
 
-    <script src="../js/jquery-3.3.1.min.js"></script>
-	<script src="../js/app2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

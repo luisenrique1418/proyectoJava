@@ -1,3 +1,14 @@
+<div class="contenedor">
+<?php
+$type = isset($_POST["type"]) ? $_POST["type"] : "NULL";
+if ($type == "login"){
+    echo "login";
+}else {
+    echo "ERROR";
+}
+
+?> 
+</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +20,7 @@
 </head>
 <body>
     <div class="embed-container">
-    <iframe src="../HTML/BannerDatos.html" frameborder="0"  width="100%" ></iframe>
+    <iframe src="../HTML/BannerDatos.php" frameborder="0"  width="100%" ></iframe>
     </div>
 </body>
 </html>
