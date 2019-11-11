@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sign Up Form</title>
-	<link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
-</head>
-<body>
+    <head>
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    </head>
+    <body>
 
-	<div class="radiosB">
-			<table class="egt">
+        <div class="radiosB">
+            <table class="egt">
 
-					<tr>
-				  
-					  <td> Alumno</td> <td><input  type="radio" name="tipo" id="alumno" value="Alumno"></td>
-				  
-					  <td> Egresado</td> <td><input  type="radio" name="tipo" id="egresado"></td>
-				  
-					  <td>Profesor</td> <td> <input  type="radio" name="tipo" id="profesor"></td>
-				  
-					</tr>
-			</table>
-	</div>
-	<div id="alumnoForm">
-	<form action="./PHP/mainPage.php" target="_parent" method="post">
-		<p>
-			<label for="username">Numero De Control</label>
-			<input id="username" name="username" type="text">
-		</p>
-		<p>
-			<label for="password">ContraseÃ±a</label>
-			<input id="password" name="password" type="password">
-			<span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
-		</p>	
-		<p>
-			<input type="submit" value="SUBMIT" id="submitAl">
-			<input type="hidden" name="BUTTON" value="Alumno">
-            <input type="hidden" name="type" value="login">
-		</p>
-	
-	</form>
-</div>
+                <tr>
 
-<div id="egresadoForm">
-		<form action="./PHP/mainPage.php" target="_parent" method="post">
-			<p>
-				<label for="username">NoCtrl</label>
-				<input id="username" name="username" type="text">
-			</p>
-			<p>
-				<label for="password">ContraseÃ±a</label>
-				<input id="password" name="password" type="password">
-				<span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
-			</p>
-			<p>
-				<input type="submit" value="SUBMIT" id="submit">
-				<input type="hidden" name="BUTTON" value="Egresado">
+                    <td> Alumno</td> <td><input  type="radio" name="tipo" id="alumno" value="Alumno"></td>
+
+                    <td> Egresado</td> <td><input  type="radio" name="tipo" id="egresado"></td>
+
+                    <td>Profesor</td> <td> <input  type="radio" name="tipo" id="profesor"></td>
+
+                </tr>
+            </table>
+        </div>
+        <div id="alumnoForm">
+            <form action="./PHP/mainPage.php" target="_parent" method="post">
+                <p>
+                    <label for="username">Numero De Control</label>
+                    <input id="username" maxlength="8" name="username" type="text">
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password">
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
+                </p>	
+                <p>
+                    <input type="submit" value="SUBMIT" id="submitAl">
+                    <input type="hidden" name="BUTTON" value="Alumno">
                     <input type="hidden" name="type" value="login">
-			</p>
-		
-		</form>
-	</div>
+                </p>
 
-	<div id="profesorForm">
-			<form action="./PHP/mainPage.php" target="_parent" method="post">
-				<p>
-					<label for="username">Numero de Tarjeta</label>
-					<input id="username" name="username" type="text">
-				</p>
-				<p>
-					<label for="password">ContraseÃ±a</label>
-					<input id="password" name="password" type="password">
-					<span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
-				</p>
-				<p>
-					<input type="submit" value="SUBMIT" id="submit">
-					<input type="hidden" name="BUTTON" value="Profesor">
+            </form>
+        </div>
+
+        <div id="egresadoForm">
+            <form action="./PHP/mainPage.php" target="_parent" method="post">
+                <p>
+                    <label for="username">NoCtrl</label>
+                    <input id="username" name="username" type="text">
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input id="password"maxlength="8" name="password" type="password">
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
+                </p>
+                <p>
+                    <input type="submit" value="SUBMIT" id="submit">
+                    <input type="hidden" name="BUTTON" value="Egresado">
                     <input type="hidden" name="type" value="login">
-				</p>
-			
-			</form>
-		</div>
+                </p>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
-</body>
+            </form>
+        </div>
+
+        <div id="profesorForm">
+            <form action="./PHP/mainPage.php" target="_parent" method="post">
+                <p>
+                    <label for="username">Numero de Tarjeta</label>
+                    <input id="username" maxlength="8" name="username" type="text">
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password">
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
+                </p>
+                <p>
+                    <input type="submit" value="SUBMIT" id="submit">
+                    <input type="hidden" name="BUTTON" value="Profesor">
+                    <input type="hidden" name="type" value="login">
+                </p>
+
+            </form>
+        </div>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+    <script>
+        $(function () {
+            $(".validar").keydown(function (event) {
+                //alert(event.keyCode);
+                if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105) && event.keyCode !== 190 && event.keyCode !== 110 && event.keyCode !== 8 && event.keyCode !== 9) {
+                    return false;
+                }
+            });
+        });
+        function limpiar() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
 </html>
