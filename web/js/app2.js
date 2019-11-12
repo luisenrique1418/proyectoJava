@@ -32,6 +32,15 @@ function longitud() {
     }
 }
 
+function validarEmail(email) {
+    var co = email.value;
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!expr.test(co)) {
+        alert("Correo Invalido");
+        document.getElementById("email").value = "";
+    }
+}
+
 function compara() {
     if ($("#password").val() === $('#confirm').val()) {
         $('#confirm').next().hide();
