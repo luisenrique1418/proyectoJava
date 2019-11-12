@@ -1,5 +1,29 @@
 $('span').hide();
 
+$(function () {
+    $(".validarNumero").keydown(function (event) {
+        //alert(event.keyCode);
+        if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105) && event.keyCode !== 190 && event.keyCode !== 110 && event.keyCode !== 8 && event.keyCode !== 9) {
+            return false;
+        }
+    });
+});
+$(function () {
+    $(".validarLetra").keydown(function (event) {
+        //alert(event.keyCode);
+        if (event.keyCode < 65 || event.keyCode > 90) {
+            return false;
+        }
+    });
+});
+function validarSemestre(num) {
+    if (num.value < 13) {
+
+    } else {
+        document.getElementById("semestre").value = "";
+    }
+}
+
 function longitud() {
     if ($('#password').val().length > 8) {
         $('#password').next().hide();
@@ -20,7 +44,7 @@ function compara() {
 $('#password').keyup(longitud).keyup(compara);
 $('#confirm').keyup(compara).keyup(longitud);
 
-$('#alumno').click(function() {
+$('#alumno').click(function () {
     $('#alumnoForm').is(':hidden')
     $('#alumnoForm').show();
 
@@ -31,7 +55,7 @@ $('#alumno').click(function() {
     $('#profesorForm').hide();
 });
 
-$('#egresado').click(function() {
+$('#egresado').click(function () {
     $('#alumnoForm').is(':visible')
     $('#alumnoForm').hide();
 
@@ -42,7 +66,7 @@ $('#egresado').click(function() {
     $('#profesorForm').hide();
 });
 
-$('#profesor').click(function() {
+$('#profesor').click(function () {
     $('#alumnoForm').is(':visible')
     $('#alumnoForm').hide();
 
@@ -87,23 +111,23 @@ $('#profesor').click(function() {
 
 
 /*$('span').hide();
-
-var longitud = function() {
-    if ($('#password').val().length > 8) {
-        $('#password').next().hide();
-    } else {
-        $('#password').next().show();
-    }
-}
-
-var compara = function() {
-    if ($('#password').val() === $('#confirm').val()) {
-        $('#confirm').next().hide();
-    } else {
-        $('#confirm').next().show();
-    }
-}
-
-$('#password').keyup(longitud).keyup(compara);
-$('#confirm').keyup(compara).keyup(longitud);
-*/
+ 
+ var longitud = function() {
+ if ($('#password').val().length > 8) {
+ $('#password').next().hide();
+ } else {
+ $('#password').next().show();
+ }
+ }
+ 
+ var compara = function() {
+ if ($('#password').val() === $('#confirm').val()) {
+ $('#confirm').next().hide();
+ } else {
+ $('#confirm').next().show();
+ }
+ }
+ 
+ $('#password').keyup(longitud).keyup(compara);
+ $('#confirm').keyup(compara).keyup(longitud);
+ */

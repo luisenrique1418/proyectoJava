@@ -25,7 +25,7 @@
             <form action="./PHP/mainPage.php" target="_parent" method="post">
                 <p>
                     <label for="username">Numero De Control</label>
-                    <input id="username" maxlength="8" name="username" type="text">
+                    <input id="username" maxlength="8" class="validarNumero" name="username" type="text">
                 </p>
                 <p>
                     <label for="password">Contraseña</label>
@@ -45,7 +45,7 @@
             <form action="./PHP/mainPage.php" target="_parent" method="post">
                 <p>
                     <label for="username">NoCtrl</label>
-                    <input id="username" name="username" type="text">
+                    <input id="username" name="username" class="validarNumero" type="text">
                 </p>
                 <p>
                     <label for="password">Contraseña</label>
@@ -65,7 +65,7 @@
             <form action="./PHP/mainPage.php" target="_parent" method="post">
                 <p>
                     <label for="username">Numero de Tarjeta</label>
-                    <input id="username" maxlength="8" name="username" type="text">
+                    <input id="username" maxlength="8" class="validarNumero" name="username" type="text">
                 </p>
                 <p>
                     <label for="password">Contraseña</label>
@@ -85,14 +85,7 @@
         <script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
     </body>
     <script>
-        $(function () {
-            $(".validar").keydown(function (event) {
-                //alert(event.keyCode);
-                if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105) && event.keyCode !== 190 && event.keyCode !== 110 && event.keyCode !== 8 && event.keyCode !== 9) {
-                    return false;
-                }
-            });
-        });
+       
         function limpiar() {
             document.getElementById("username").value = "";
             document.getElementById("password").value = "";
