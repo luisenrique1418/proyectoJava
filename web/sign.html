@@ -1,173 +1,211 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sign Up Form</title>
-	<link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
-</head>
-<body>
+    <head>
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/style2.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    </head>
+    <body>
 
-	<div class="radiosB">
-			<table class="egt">
-					<tr>
-					  <td> Alumno</td> <td><input  type="radio" name="tipo" id="alumno" value="Alumno"></td>
-					  <td> Egresado</td> <td><input  type="radio" name="tipo" id="egresado"></td>
-					  <td>Profesor</td> <td> <input  type="radio" name="tipo" id="profesor"></td>
-					</tr>
-			</table>
-	</div>
-	<div id="alumnoForm">
-	<form action="./PHP/veriPage.php" target="_parent" method="post">
-		<p>
-			<label for="username">Numero De Control</label>
-			<input id="noCtrl" name="NoCtrl" type="text" >
-        </p>
-        <p>
-                <label for="username">Nombre</label>
-                <input id="nombre" name="nombre" type="text" >
-        </p>
-		<p>
-			<label for="password">ContraseÃ±a</label>
-			<input id="password" name="password" type="password" >
-			<span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
-        </p>
-        <p>
-                <label for="confirm">Confirma la contrasÃ±a</label>
-                <input id="confirm" name="confirm" type="password" >
-                <span>Las contraseÃ±as no coinciden</span>
-            </p>
-            <p>
-                    <label for="username">Edad</label>
-                    <input id="edad" name="edad" type="text" >
-            </p>
-            <p>
-                    <label for="username">Sexo</label>
-                    <input id="sexo" name="sexo" type="text">
-            </p>
-            <p>
-                <label for="username">Carrera</label>
-                <input id="carrera" name="carrera" type="text">
-            </p>
-            <p>
-                <label for="username">Semestre</label>
-                <input id="semestre" name="semestre" type="text">
-            </p>
-            <p>
-                    <label for="username">Correo</label>
-                    <input id="email" name="email" type="text">
-            </p>
-		<p>
-            <input type="submit" value="SUBMIT" id="submitAlSi">
-            <input type="hidden" name="BUTTON" value="Alumno">
-            <input type="hidden" name="type" value="sign">
-		</p>
-	
-	</form>
-</div>
-
-<div id="egresadoForm">
-        <form action="./PHP/veriPage.php" target="_parent" method="post">
-            <p>
-                <label for="username">Numero De Control</label>
-                <input id="noCtrl" name="NoCtrl" type="text">
-            </p>
-            <p>
+        <div class="radiosB">
+            <table class="egt">
+                <tr>
+                    <td> Alumno</td> <td><input  type="radio" name="tipo" id="alumno" value="Alumno"></td>
+                    <td> Egresado</td> <td><input  type="radio" name="tipo" id="egresado"></td>
+                    <td>Profesor</td> <td> <input  type="radio" name="tipo" id="profesor"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="alumnoForm">
+            <form action="./PHP/veriPage.php" target="_parent" method="post">
+                <p>
+                    <label for="username">Numero De Control</label>
+                    <input id="noCtrl" name="NoCtrl" maxlength="8" class="validarNumero" type="text" >
+                </p>
+                <p>
                     <label for="username">Nombre</label>
-                    <input id="nombre" name="nombre" type="text">
-            </p>
-            <p>
-                <label for="password">ContraseÃ±a</label>
-                <input id="password" name="password" type="password">
-                <span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
-            </p>
-            <p>
-                    <label for="confirm">Confirma la contrasÃ±a</label>
+                    <input id="nombre" name="nombre" maxlength="30" class="validarLetra" type="text" >
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password" >
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
+                </p>
+                <p>
+                    <label for="confirm">Confirma la contrasña</label>
+                    <input id="confirm" name="confirm" type="password" >
+                    <span>Las contraseñas no coinciden</span>
+                </p>
+                <p>
+                    <label for="username">Edad</label>
+                    <input id="edad" name="edad" class="validarNumero" maxlength="2" type="text" >
+                </p>
+                <p>
+                    <label for="username">Sexo</label>
+                    <select name="sexos">
+                        <option value="">Seleccione...</option> 
+                        <option value="M">M</option> 
+                        <option value="F">F</option> 
+                    </select>
+                </p>
+                <p>
+                    <label for="username">Carrera</label>
+                    <select name="carreras">
+                        <option value="">Seleccione...</option> 
+                        <option value="0">Ingenieria en Sistemas Computacionales</option> 
+                        <option value="1">Ingenieria Electronica</option> 
+                        <option value="2">Ingenieria Electrica</option> 
+                        <option value="3">Ingenieria Industrial</option> 
+                        <option value="4">Ingenieria Gestión</option> 
+                        <option value="5">Ingenieria Energia Renovables</option> 
+                        <option value="6">Ingenieria Administración</option> 
+                    </select>                 </p>
+                <p>
+                    <label for="username">Semestre</label>
+                    <input id="semestre" name="semestre" onchange="validarSemestre(this)"  type="text">
+                </p>
+                <p>
+                    <label for="username">Correo</label>
+                    <input id="email" name="email" onchange="validarEmail(this)" type="text">
+                </p>
+                <p>
+                    <input type="submit" value="SUBMIT" id="submitAlSi">
+                    <input type="hidden" name="BUTTON" value="Alumno">
+                    <input type="hidden" name="type" value="sign">
+                </p>
+
+            </form>
+        </div>
+
+        <div id="egresadoForm">
+            <form action="./PHP/veriPage.php" target="_parent" method="post">
+                <p>
+                    <label for="username">Numero De Control</label>
+                    <input id="noCtrl" name="NoCtrl" maxlength="8" class="validarNumero" type="text">
+                </p>
+                <p>
+                    <label for="username">Nombre</label>
+                    <input id="nombre" name="nombre" maxlength="30" class="validarLetra" type="text">
+                </p>
+                <p>
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password">
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
+                </p>
+                <p>
+                    <label for="confirm">Confirma la contrasña</label>
                     <input id="confirm" name="confirm" type="password">
-                    <span>Las contraseÃ±as no coinciden</span>
+                    <span>Las contraseñas no coinciden</span>
                 </p>
                 <p>
-                        <label for="username">Edad</label>
-                        <input id="edadEgre" name="edad" type="text">
+                    <label for="username">Edad</label>
+                    <input id="edadEgre" name="edad" maxlength="2" type="text">
                 </p>
                 <p>
-                        <label for="username">Sexo</label>
-                        <input id="sexoEgre" name="sexo" type="text">
+                    <label for="username">Sexo</label>
+                    <select name="sexos">
+                        <option value="">Seleccione...</option> 
+                        <option value="M">M</option> 
+                        <option value="F">F</option> 
+                    </select>
                 </p>
                 <p>
-                    <label for="username">Profesion</label>
-                    <input id="profesion" name="profesion" type="text">
+                    <label for="username">Carrera</label>
+                    <select name="carreras">
+                        <option value="">Seleccione...</option> 
+                        <option value="0">Ingenieria en Sistemas Computacionales</option> 
+                        <option value="1">Ingenieria Electronica</option> 
+                        <option value="2">Ingenieria Electrica</option> 
+                        <option value="3">Ingenieria Industrial</option> 
+                        <option value="4">Ingenieria Gestión</option> 
+                        <option value="5">Ingenieria Energia Renovables</option> 
+                        <option value="6">Ingenieria Administración</option> 
+                    </select>      
                 </p>
                 <p>
-                        <label for="username">Nombre de la empresa</label>
-                        <input id="nombreEMP" name="nombreEMP" type="text">
-                    </p>
+                    <label for="username">Nombre de la empresa</label>
+                    <input id="nombreEMP" name="nombreEMP" maxlength="30" type="text">
+                </p>
                 <p>
                     <label for="username">Puesto</label>
                     <input id="puesto" name="puesto" type="text">
                 </p>
                 <p>
-                        <label for="username">Correo</label>
-                        <input id="emailEgre" name="email" type="text">
+                    <label for="username">Correo</label>
+                    <input id="emailEgre" name="email" onchange="validarEmail(this)" type="text">
                 </p>
-            <p>
+                <p>
                     <input type="hidden" name="BUTTON" value="Egresado">
                     <input type="hidden" name="type" value="sign">
-            </p>
-        
-        </form>
-    </div>
+                </p>
+
+            </form>
+        </div>
 
 
-    <div id="profesorForm">
+        <div id="profesorForm">
             <form action="./PHP/veriPage.php" target="_parent" method="post">
-                
+
                 <p>
                     <label for="username">Numero De Tarjeta</label>
                     <input id="noCtrl" name="NoCtrl" type="text">
                 </p>
                 <p>
-                        <label for="username">Nombre</label>
-                        <input id="nombre" name="nombre" type="text">
+                    <label for="username">Nombre</label>
+                    <input id="nombre" name="nombre" type="text">
                 </p>
                 <p>
-                    <label for="password">ContraseÃ±a</label>
+                    <label for="password">Contraseña</label>
                     <input id="password" name="password" type="password">
-                    <span>La contraseÃ±a debe de ser mayor a 8 caracteres</span>
+                    <span>La contraseña debe de ser mayor a 8 caracteres</span>
                 </p>
                 <p>
-                        <label for="confirm">Confirma la contrasÃ±a</label>
-                        <input id="confirm" name="confirm" type="password">
-                        <span>Las contraseÃ±as no coinciden</span>
-                    </p>
-                    <p>
-                            <label for="username">Edad</label>
-                            <input id="edadProf" name="edad" type="text">
-                    </p>
-                    <p>
-                            <label for="username">Sexo</label>
-                            <input id="sexoProf" name="sexo" type="text">
-                    </p>
-                    <p>
-                        <label for="username">Profesion</label>
-                        <input id="Profesion" name="Profesion" type="text">
-                    </p>
-                    <p>
-                        <label for="username">Carrera que imparte</label>
-                        <input id="carreraImp" name="carreraimp" type="text">
-                    </p>
-                    <p>
-                            <label for="username">Correo</label>
-                            <input id="email" name="email" type="text">
-                    </p>
+                    <label for="confirm">Confirma la contrasña</label>
+                    <input id="confirm" name="confirm" type="password">
+                    <span>Las contraseñas no coinciden</span>
+                </p>
+                <p>
+                    <label for="username">Edad</label>
+                    <input id="edadProf" name="edad" type="text">
+                </p>
+                <p>
+                    <label for="username">Sexo</label>
+                    <select name="sexos">
+                        <option value="">Seleccione...</option> 
+                        <option value="M">M</option> 
+                        <option value="F">F</option> 
+                    </select>                </p>
+                <p>
+                    <label for="username">Profesion</label>
+                    <input id="Profesion" name="Profesion" type="text">
+                </p>
+                <p>
+                    <label for="username">Carrera que imparte</label>
+                    <select name="carreras">
+                        <option value="">Seleccione...</option> 
+                        <option value="0">Ingenieria en Sistemas Computacionales</option> 
+                        <option value="1">Ingenieria Electronica</option> 
+                        <option value="2">Ingenieria Electrica</option> 
+                        <option value="3">Ingenieria Industrial</option> 
+                        <option value="4">Ingenieria Gestión</option> 
+                        <option value="5">Ingenieria Energia Renovables</option> 
+                        <option value="6">Ingenieria Administración</option> 
+                    </select>                    </p>
+                <p>
+                    <label for="username">Correo</label>
+                    <input id="email" name="email" onchange="validarEmail(this)" type="text">
+                </p>
                 <p>
                     <input type="submit" value="SUBMIT" id="submitProfSi">
                     <input type="hidden" name="BUTTON" value="Profesor">
                     <input type="hidden" name="type" value="sign">
                 </p>
-            
+
             </form>
         </div>
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
-</body>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/app2.js" type="text/javascript" charset="utf-8"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    </body>
 </html>
