@@ -1,0 +1,175 @@
+
+
+/*------------------------------------------------------------------------------------------
+:*                       INSTITUTO TECNOLOGICO DE LA LAGUNA
+:*                     INGENIERIA EN SISTEMAS COMPUTACIONALES
+:*                       GESTION DE PROYECTOS DE SOFTWARE
+:*
+:*                   SEMESTRE: AGO-DIC/2019    HORA: 05:00pm-06:00pm
+:*
+:*                       SCRIPT DE LA BASE DE DATOS DEL PROYECTO
+:*        
+:*  Archivo     : contactoitl.sql
+:*
+:*  Autores     : Jesus Mario Algarate Jasso           16131299
+:*                Jose Alonso Martinez Rios            16130823
+:*                Octavio Gabriel Montelongo Huizar    16130042
+:*                Daniel Antonio Arratia Espinosa      16130007
+:*                Luis Enrique Garcia Rodriguez        15130160 
+:*
+:*  Fecha       : 25/10/2019
+:*  Compilador  : MariaDB 10.2.18
+:*
+:*  Descripcion : SCRIPT de la base de datos "contactoitl", la cual es utilizada para el
+:*                proyecto de la materia de Gestion de Proyectos de Software.
+:*
+:*  Ultima modificacion:
+:*  Fecha         AutorModificacion       Motivo
+:*========================================================================================== 
+:*  13/11/2019    Daniel Arratia          Se implementaron 2 tablas mas a la base de datos,  
+:*                                        estas tablas son: Replica y Discusiones
+:*------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+---------------------------------------
+-- Creamos la Base de Datos contactoitl
+---------------------------------------
+CREATE DATABASE contactoitl
+
+
+
+-----------------------------------
+-- Ponemos en uso la Base de Datos
+-----------------------------------
+USE contactoitl
+
+
+
+
+-- ----------------------------
+-- Table structure for alumno
+-- ----------------------------
+
+DROP TABLE IF EXISTS `alumno`;
+CREATE TABLE `alumno`  (
+  `NoCtrl` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `NombreAlumno` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EdadAlumno` smallint(6) NULL DEFAULT NULL,
+  `SexoAlumno` char(1) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `CarreraAlumno` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Semestre` smallint(6) NULL DEFAULT NULL,
+  `Email` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`NoCtrl`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+
+-- ----------------------------
+-- Table structure for egresado
+-- ----------------------------
+
+DROP TABLE IF EXISTS `egresado`;
+CREATE TABLE `egresado`  (
+  `NoCtrlEgresado` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `NombreEgresado` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EdadEgresado` smallint(6) NULL DEFAULT NULL,
+  `SexoEgresado` char(2) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Profesion` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EmailEgresado` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `NombreEmpresa` varchar(90) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `PuestoEmpresa` varchar(90) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`NoCtrlEgresado`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+
+-- ----------------------------
+-- Table structure for profesor
+-- ----------------------------
+
+DROP TABLE IF EXISTS `profesor`;
+CREATE TABLE `profesor`  (
+  `NoTarjeta` varchar(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `NombreProfesor` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EdadProfesor` smallint(6) NULL DEFAULT NULL,
+  `SexoProfesor` char(2) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Profesion` varchar(80) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EmailProfesor` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `CarreraImparte` varchar(95) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`NoTarjeta`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+
+-- ----------------------------
+-- Table structure for usuarioinvitado
+-- ----------------------------
+
+DROP TABLE IF EXISTS `usuarioinvitado`;
+CREATE TABLE `usuarioinvitado`  (
+  `NoUsu` int(100) NOT NULL AUTO_INCREMENT,
+  `NombreUsuario` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `EdadUsuario` smallint(10) NULL DEFAULT NULL,
+  `SexoUsuario` char(1) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `Email` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`NoUsu`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+
+-- ----------------------------
+-- Table structure for discusiones
+-- ----------------------------
+DROP TABLE IF EXISTS `discusiones`;
+CREATE TABLE `discusiones`  (
+  `NombreTema` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `ID_Tema` int(3) NOT NULL,
+  `ContenidoDiscusion` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `ID_Usuario` varchar(16) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`ID_Tema`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+-- ----------------------------
+-- Table structure for replica
+-- ----------------------------
+DROP TABLE IF EXISTS `replica`;
+CREATE TABLE `replica`  (
+  `NombreTema` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `ID_Tema` int(3) NOT NULL,
+  `ContenidoReplica` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `ID_Usuario` varchar(16) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `ID_Replica` int(255) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID_Replica`) USING BTREE,
+  INDEX `Fk_ID_Tema`(`ID_Tema`) USING BTREE,
+  CONSTRAINT `Fk_ID_Tema` FOREIGN KEY (`ID_Tema`) REFERENCES `discusiones` (`ID_Tema`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
