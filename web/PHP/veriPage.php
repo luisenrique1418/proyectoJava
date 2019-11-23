@@ -13,12 +13,27 @@ switch($acceso){
         $carrera = $_POST["carrera"];
         $semestre = $_POST["semestre"];
         $correo = $_POST["email"];
-        $query = mysqli_query($conexion,"INSERT INTO `alumno`(`NoCtrl`, `NombreAlumno`, `EdadAlumno`, `SexoAlumno`, `CarreraAlumno`, `Semestre`, `Email`, `Password`) VALUES ('$NoCtrl','$Nombre',32,'$sexo','$carrera',33,'$correo','$Contraseña')");
+        settype($edad,"int");
+        settype($semestre,"int");
+        $query = mysqli_query($conexion,"INSERT INTO `alumno`(`NoCtrl`, `NombreAlumno`, `EdadAlumno`, `SexoAlumno`, `CarreraAlumno`, `Semestre`, `Email`, `Password`) VALUES ('$NoCtrl','$Nombre',$edad,'$sexo','$carrera',$semestre,'$correo','$Contraseña')");
+        
         if($query){
             $headers = 'MIME-Version: 1.0' . "\r\n";
             $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-            $contenido = "Porfavor verifique su cuenta <br> presione en el siguiente enlace <br> <a href='http://localhost/proyectoJava/web/PHP/habilitar.php/?NoControl=$NoCtrl'>presione aquí parfa verificar su cuenta</a> <br> Una vez en el sitio tendra que iniciar sesion.";
+            $contenido = "Porfavor verifique su cuenta <br> presione en el siguiente enlace <br> <a href='http://localhost/proyectoJava/web/PHP/habilitar.php/?NoControl=$NoCtrl&tipo=$acceso'>presione aquí parfa verificar su cuenta</a> <br> Una vez en el sitio tendra que iniciar sesion.";
             mail($correo,"VERIFICACION DE CUENTA",$contenido,$headers);
+        }else{
+            ?>
+            
+    <script type="text/javascript" charset="utf-8">
+    function lohicimos() {
+        alert(
+            "No se pudo insertar"+<?php echo $query;     ?>
+        );
+    }
+    lohicimos();
+    </script>
+            <?php 
         }
         break;
     case "Egresado":
