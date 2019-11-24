@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+
+.caja {
+  border: 1px solid #000;
+  cursor: pointer;
+  background-color: slateblue;
+}
+.caja h1 {
+  display: block;
+  padding: 1rem 0 1rem 0;
+  margin: 0;
+  text-align: center;
+  background-color: #99ddff;
+}
+.caja a {
+  display: block;
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+  background-color: #99ff99;
+}
+
+.noticia{
+    text-align: center;
+    padding: 1rem 0 1rem 0 ;
+    background-color: rgb(103, 103, 103) ;
+    border: .1rem solid black;
+    font-family: 'Asap', sans-serif;
+}
+
+.noticia a{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(255,153,51);
+    
+}

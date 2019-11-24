@@ -1,20 +1,171 @@
-html,body{
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive&display=swap');
+
+
+.header{
     margin: 0;
     padding: 0;
+    width: 100%;
     font-size: 62.25%;
-}
-
-
-.BannerDatos {
+    color: rgba(red, green, blue,0.3);
     background-image: linear-gradient(to right bottom, rgba(68, 85, 102, 0.3),rgba(47, 79, 79, 0.5))
     ,url(../img/Banner-Exalumnos.jpg);
-    height: 18rem;
+}
+
+.card--info{
+    position: absolute;
+    min-width: 60%;
+    float: left;
+    
+}
+
+.card--info p{
+   font-size: 2rem ;
+   padding: 5%;
+   text-align: center;
+   color: seashell  ;
+   font-family: 'Cedarville Cursive', cursive;
+}
+
+.card--info img{
+   float: left;
+   width: 8rem;
+}
+
+.logo{
+    float: left;
+
+}
+
+.bienvenido{
+    float: left;
+    padding-left: 8rem;
+}
+
+.Card--Personal{
+   position: relative;
+   float: left;
+   padding: 1% 0 0 70%;
+   font-size: 1rem;
+   color: seashell;
+}
+
+.Card--Personal img{
+    width: 4rem;
+    height:4rem;
+    border-radius:150px;
+    
+}
+
+.Card--Personal a{
+    color: seashell;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+}
+
+.otro a{
+    color: seashell;
+    text-decoration: none;
+}
+
+.otro{
+    clear: both;
+    font-size: 2rem;
+    background-color : rgb(68, 85, 102);
+}
+
+.BannerDatos {
+    /*height: 18rem;*/
     overflow: hidden;
     font-size: 1.2rem;
+    background-image: linear-gradient(to right bottom, rgba(68, 85, 102, 0.3),rgba(47, 79, 79, 0.5))
+    ,url(../img/Banner-Exalumnos.jpg);
 }
+/*
+#Spanxd{
+    display: none;
+}
+
+*/
+
+#Spanxd{
+    background: rgba(68, 85, 102, 0.8);
+	border-radius: .2rem;
+	margin: 1.1rem 0 0 9rem;
+	padding: 0 0 0 1rem;
+	width: 7rem;
+    position: relative;
+    display: none;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;  
+  transition: all 0.2s;
+  position: relative;
+}
+/*
+.btn::after {
+  content: "";
+  background-color: orangered;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rem;
+  display: inline-block;
+  z-index: -1;
+  transition: all 0.4s;
+}*/
+
+/*
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+*/
+
+/*
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+*/
+/*
+.btn--animated {
+  animation: moveInBottom 1s ease-in 0.5s;
+  animation-fill-mode: backwards;
+}
+*/
+
+.btn--blue {
+  background-color: rgba(0, 0,0, .7);
+  color: #000000;
+}
+.btn--blue::after {
+  background-color: #C0C0C0;
+}
+
+.btn--red {
+  background-color: rgba(175, 127, 31, 0.856);
+  color: #ffffff;
+}
+.btn--red::after {
+  background-color: #8A651B;
+}
+
 
 .conteneor{
     width: 100%;
     height: 10%;
-    padding-bottom: 20px;
+    padding-bottom: 1.8rem;
 }

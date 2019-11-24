@@ -87,21 +87,11 @@ $('#profesor').click(function () {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$('#acard').click(function (e) {
+    e.preventDefault();
+    $('#Spanxd').toggle();
+    $('#Espacios').toggle();
+  });
 
 
 
