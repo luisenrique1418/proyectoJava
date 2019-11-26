@@ -100,7 +100,7 @@ switch($tipo){
         <!--<a id="revealColorSelect"><i class="feature-box__icon icon-arrows-circle-down"></i></a>-->
         <div id="Spanxd">
           <span id="idid"></span>
-          <a href="CreateEncuestas.html/?" target="contenido"> Crear Encuesta</a><br />
+          <a href="CrearEncuestas.php/?NoCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido"> Crear Encuesta</a><br />
           <a href="" target="contenido"> Ver Perfil </a><br />
           <a href="#" target="contenido">Cerrar Sesion</a><br />
         </div>

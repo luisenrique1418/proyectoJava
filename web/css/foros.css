@@ -3,7 +3,6 @@
     cursor: pointer;
     height: 12rem;
     width: 40rem;
-
 }
 
 .foroM{
@@ -11,7 +10,7 @@
     margin-left: 5%;
     margin-top: 5%;
     height: auto;
-    width: 40rem;
+    width: 88%;
     background-color:lightgray;
 }
 
@@ -19,8 +18,8 @@
   margin-bottom: 0%;
   margin-top: 0%;
   margin-left: 13%;
-  height: auto;
-  width: 36rem;
+  height: 10rem;
+  width: 80%;
 }
 
 .contenedor{
@@ -45,14 +44,14 @@
 .contenido{
     max-width: 114rem;
     margin: auto auto;    
-    border-right: solid black;
-    border-left: solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
 }
 
 .row {
     max-width: 114rem;
     margin: auto auto;
-    border: solid black;
+    border: 1px solid black;
     text-align: justify ;
  }
     .row:not(:last-child) {
@@ -65,7 +64,7 @@
       display: inline-block; }
       .row [class^="col-"]:not(:last-child) {
          
-        border-right: solid black;
+        border-right: 1px solid black;
     }
     .row .col-1-of-2 {
       width: calc( (100% - 1rem)/2);

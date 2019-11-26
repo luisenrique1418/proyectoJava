@@ -62,7 +62,7 @@ if($conexion){
     <div id="replica" class="replica">
       <div class="row">
         <div class="col-1-of-4">fecha</div>
-        <div class="col-1-of-3">Titulo</div>
+        <div class="col-1-of-2">Re: <?php echo($titulo)  ?> </div>
         <div class="col-1-of-3">Autor</div>
       </div>
       <div class="contenido">
@@ -84,7 +84,7 @@ if($conexion){
         <div id="replica" class="replica">
           <div class="row">
             <div class="col-1-of-4">fecha</div>
-            <div class="col-1-of-3"><input type="text" name="" id=""></div>
+            <div class="col-1-of-2">RE: <?php echo($titulo)  ?>  </div>
             <div class="col-1-of-3">Autor</div>
           </div>
           <div class="contenido">
