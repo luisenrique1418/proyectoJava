@@ -93,7 +93,7 @@ switch($tipo){
       </div>
       <div class="Card--Personal" id="Card--Personal">
         <?php echo($NoCtrl."  ".$Nombre); ?> &nbsp;
-        <img src="../img/ProfilePictures/<?php echo $foto; ?>" alt="ImagenUsuario" />
+        <img src="../img/ProfilePictures/<?php echo $foto; ?>.jpg" alt="ImagenUsuario" />
         <a href="#" id="acard">
                 <i class="feature-box__icon icon-arrows-circle-down"></i>
         </a>
@@ -101,7 +101,7 @@ switch($tipo){
         <div id="Spanxd">
           <span id="idid"></span>
           <a href="CrearEncuestas.php/?NoCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido"> Crear Encuesta</a><br />
-          <a href="" target="contenido"> Ver Perfil </a><br />
+          <a href="imagen.php/?NoCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido"> Ver Perfil </a><br />
           <a href="#" target="contenido">Cerrar Sesion</a><br />
         </div>
         <div id="Espacios">
@@ -111,15 +111,15 @@ switch($tipo){
       </div>
 
       <div class="otro">
-        <a href="inicio.php" target="contenido" class="btn btn--blue btn--animated"
+        <a href="inicio.php/?Replica=<?php echo($NoCtrl); ?>&ReplicaT=<?php echo($tipo); ?>" target="contenido" class="btn btn--blue btn--animated"
           ><i class="feature-box_icon icon-basic-home"></i> inicio</a>
         <a href="mencuestas.php" target="contenido" class="btn btn--blue btn--animated"
           ><i class="feature-box_icon icon-basic-todo-txt"></i> encuestas</a
         >
-        <a href="mforos.php/?NoCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido" class="btn btn--blue btn--animated"
+        <a href="mforos.php/?Replica=<?php echo($NoCtrl); ?>&ReplicaT=<?php echo($tipo); ?>" target="contenido" class="btn btn--blue btn--animated"
           ><i class="feature-box_icon icon-basic-webpage-txt"></i> foros</a
         >
-        <a href="mmisforos.php/?NoCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido" class="btn btn--blue btn--animated"
+        <a href="mmisforos.php/?ReplicaCtrl=<?php echo($NoCtrl); ?>&tipo=<?php echo($tipo); ?>" target="contenido" class="btn btn--blue btn--animated"
           ><i class="feature-box_icon icon-basic-webpage-img-txt"></i> mis
           foros</a
         >
@@ -129,7 +129,7 @@ switch($tipo){
     <div class="main" style="background-color: white;">
       <iframe
       name="contenido"
-        src="inicio.php"
+        src="inicio.php/?Replica=<?php echo $NoCtrl; ?>&ReplicaT=<?php echo $tipo; ?>"
         width="64%"
         height="500"
         frameborder="0"

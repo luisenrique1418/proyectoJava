@@ -15,7 +15,12 @@
         <?php
             $survey = new Survey();
             $showResults = false;
-
+            $conexion2 = $conexion = mysqli_connect('localhost','root','','encuestas');
+            if($conexion2){
+                $query = mysqli_query($conexion,"SELECT DISTINCT titulo FROM `$tb`");
+                $row = mysqli_fetch_all($query);
+                $titulo = $row[0][0];
+            }
             if(isset($_POST['lenguaje'])){
                 $showResults = true;
                 $survey->setOptionSelected($_POST['lenguaje']);
@@ -23,7 +28,7 @@
             }
 
         ?>
-        <h2>¿Cuál es tu lenguaje de programación favorito?</h2>
+        <h2> <?php echo $titulo; ?> </h2>
         <?php
 
             if($showResults){

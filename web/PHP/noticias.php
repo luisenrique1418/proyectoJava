@@ -8,15 +8,27 @@
     <link rel="stylesheet" href="../css/inicio.css">
 </head>
 <body>
-    <div class="noticia"><a href="">noticia 1</a></div>
-    <div class="noticia"><a href="">noticia 2</a></div>
-    <div class="noticia"><a href="">noticia 3</a></div>
-    <div class="noticia"><a href="">noticia 4</a></div>
-    <div class="noticia"><a href="">noticia 5</a></div>
-    <div class="noticia"><a href="">noticia 6</a></div>
-    <div class="noticia"><a href="">noticia 7</a></div>
-    <div class="noticia"><a href="">noticia 8</a></div>
-    <div class="noticia"><a href="">noticia 9</a></div>
-    <div class="noticia"><a href="">noticia 10</a></div>
+
+
+    <?php 
+    $conexion2 = mysqli_connect('localhost','root','','encuestas');
+    if($conexion2){
+        $query3 = mysqli_query($conexion2,"SELECT table_name AS nombre FROM information_schema.tables WHERE table_schema = 'encuestas'");
+        while (($fila = mysqli_fetch_array($query3))!=NULL){
+           $EncNom = $fila['nombre'];
+           $query4 = mysqli_query($conexion2,"SELECT DISTINCT `noticia` FROM $EncNom");
+           $row = mysqli_fetch_array($query4,MYSQLI_NUM);
+           $noticia = $row[0];
+           $query5 = mysqli_query($conexion2,"SELECT MAX(`votos`) AS `voto` ,`opcion` FROM `$EncNom` WHERE 1");
+           $row2 = mysqli_fetch_array($query5,MYSQLI_NUM);
+           $votos = $row2[0];
+           $opcion = $row2[1];
+           echo ("
+           <div class='noticia'><a href=''>$noticia  $opcion con $votos votos</a></div>
+           ");
+        }
+    }
+    
+    ?>
 </body>
 </html>

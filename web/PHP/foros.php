@@ -1,7 +1,7 @@
 
 <?php 
 
-$idc = $_GET['Autor'];
+$idc = $_GET['ReplicaCtrl'];
 $idf = $_GET['idF'];
 $tipo = $_GET['tipo'];
 
@@ -10,12 +10,14 @@ if($conexion){
     $query = mysqli_query($conexion,"SELECT * FROM `foros` WHERE `IdForo` = '$idf'");
     if($query){
       $row = mysqli_fetch_array($query,MYSQLI_NUM);
+      $idcreador = $row[1];
+      $tipoF = $row[6];
       $titulo =$row[2];
       $contenido = $row[3];
       $fecha = $row[4];
       $hora = $row[5];
     }
-    $query2 = mysqli_query($conexion,"SELECT `Nombre$tipo` FROM `$tipo` WHERE `NoCtrl` = $idc ");
+    $query2 = mysqli_query($conexion,"SELECT `Nombre$tipoF` FROM `$tipoF` WHERE `NoCtrl` = $idcreador ");
     if($query){
       $row2 = mysqli_fetch_array($query2,MYSQLI_NUM);
       $autor = $row2[0];
@@ -37,10 +39,7 @@ if($conexion){
   </head>
   <body>
 
-  <?php 
-  ?>
-
-    <div id="foroM" class="foroM">
+      <div id="foroM" class="foroM">
       <div class="row">
         <div class="col-1-of-4"><?php echo($fecha)  ?></div>
         <div class="col-1-of-2"> <?php echo($titulo)  ?> </div>
@@ -57,34 +56,72 @@ if($conexion){
       </div>
       <a id="enlace3" href=""></a>
     </div>
+    
+  <?php 
 
+if($conexion){
+    $query = mysqli_query($conexion,"SELECT * FROM `replicas` WHERE `IdForo` = '$idf'");
+    if($query){
+      while(($row = mysqli_fetch_array($query,MYSQLI_NUM))!=NULL){
+      $tituloR =$row[3];
+      $contenidoR = $row[4];
+      $fechaR = $row[5];
+      $horaR = $row[6];
+      $NoCtrlR = $row[2];
+      $tipoR = $row[7];
 
+      $query2 = mysqli_query($conexion,"SELECT `Nombre$tipoR` FROM `$tipoR` WHERE `NoCtrl` = $NoCtrlR ");
+      if($query){
+        $row2 = mysqli_fetch_array($query2,MYSQLI_NUM);
+        $autorR = $row2[0];
+      }
+      ?> 
+      
     <div id="replica" class="replica">
-      <div class="row">
-        <div class="col-1-of-4">fecha</div>
-        <div class="col-1-of-2">Re: <?php echo($titulo)  ?> </div>
-        <div class="col-1-of-3">Autor</div>
+    <div class="row">
+        <div class="col-1-of-4"><?php echo($fechaR)  ?></div>
+        <div class="col-1-of-2"> <?php echo($tituloR)  ?> </div>
+        <div class="col-1-of-3"> <?php echo($autorR)  ?> </div>
       </div>
       <div class="contenido">
-        Contenido: Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Voluptatem molestiae modi voluptatum, ea earum omnis nesciunt. Similique
-        itaque architecto minima veritatis numquam hic maxime eaque ab? Ipsam
-        architecto officia eaque?
+      <?php echo($contenidoR)  ?>
       </div>
+
       <div class="row">
-        <div class="col-1-of-4">Hora</div>
-        <div class="col-1-of-3">&nbsp;</div>
+        <div class="col-1-of-4"><?php echo($horaR)  ?></div>
+        <div class="col-1-of-2">&nbsp;</div>
+        <div class="col-1-of-3"><a href="#" id="repli"></a></div>
       </div>
+      <a id="enlace3" href=""></a>
     </div>
+
+      <?php
+
+    }
+    }
+   
+
+}
+
+$todayh = getdate();
+$d = $todayh['mday'];
+$m = $todayh['mon'];
+$y = $todayh['year'];
+
+$hour = $todayh['hours'].":".$todayh['minutes'];
+
+$ref = $d."/".$m."/".$y;
+  ?>
+
 
 
     <div class="formulario" id="formulario" style="display: none;">
         <h2>Espacio para poder hacer una replica</h2>
-      <form action="" method="post">
+      <form action="../crearreplica.php" method="post">
         <div id="replica" class="replica">
           <div class="row">
-            <div class="col-1-of-4">fecha</div>
-            <div class="col-1-of-2">RE: <?php echo($titulo)  ?>  </div>
+            <div class="col-1-of-4"><?php echo $ref; ?></div>
+            <div class="col-1-of-2"> <input type="hidden" name="titulo" value="<?php echo($titulo)  ?>"> RE: <?php echo($titulo)  ?>  </div>
             <div class="col-1-of-3">Autor</div>
           </div>
           <div class="contenido">
@@ -96,11 +133,16 @@ if($conexion){
             ></textarea>
           </div>
           <div class="row">
-            <div class="col-1-of-4"> <i ></i> Hora</div>
+            <div class="col-1-of-4"> <i ></i> <?php echo $hour; ?></div>
             <div class="col-1-of-3">&nbsp;</div>
             <div class="col-1-of-3"><input type="submit" value="Enviar"></div>
           </div>
         </div>
+        <input type="hidden" name="idc" value="<?php echo $idc ?>">
+        <input type="hidden" name="idf" value="<?php echo $idf ?>">
+        <input type="hidden" name="fecha" value="<?php echo $ref ?>">
+        <input type="hidden" name="hora" value="<?php echo $hour ?>">
+        <input type="hidden" name="tipo" value="<?php echo $tipo ?>">
       </form>
     </div>
     <script src="../../js/jquery-3.3.1.min.js"></script>

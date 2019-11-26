@@ -63,8 +63,8 @@ $tipo = $_GET['tipo'];
                         `votos` int(11) DEFAULT NULL,
                         `tipo` varchar(10) DEFAULT NULL,
                         `idc` varchar(10) DEFAULT NULL,
-                        `noticia` varchar(20) DEFAULT NULL,
-                        `titulo` varchar(20) DEFAULT NULL
+                        `noticia` varchar(50) DEFAULT NULL,
+                        `titulo` varchar(50) DEFAULT NULL
                       ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
                       ");
 
