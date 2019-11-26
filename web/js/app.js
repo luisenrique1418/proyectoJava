@@ -25,3 +25,4 @@ $('#formulario a').click(function(e) {
 $('.modal').click(function() {
     $(this).hide();
 });
+

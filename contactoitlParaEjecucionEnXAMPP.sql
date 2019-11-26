@@ -18,6 +18,7 @@ CREATE TABLE `alumno`  (
   `Email` varchar(70) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Habilitado` boolean NULL DEFAULT NULL,
+  `Foto` varchar(20) NULL DEFAULT NULL,
   PRIMARY KEY (`NoCtrl`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
@@ -34,6 +35,7 @@ CREATE TABLE `egresado`  (
   `PuestoEmpresa` varchar(90) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Habilitado` boolean NULL DEFAULT NULL,
+  `Foto` varchar(20) NULL DEFAULT NULL,
   PRIMARY KEY (`NoCtrlEgresado`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
@@ -49,6 +51,7 @@ CREATE TABLE `profesor`  (
   `CarreraImparte` varchar(95) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Password` varchar(12) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
   `Habilitado` boolean NULL DEFAULT NULL,
+  `Foto` varchar(20) NULL DEFAULT NULL,
   PRIMARY KEY (`NoTarjeta`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
